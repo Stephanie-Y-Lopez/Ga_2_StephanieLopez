@@ -20,6 +20,8 @@ namespace Ga_2_StephanieLopez
     /// </summary>
     public partial class MainWindow : Window
     {
+        private object lblEquation;
+
         public MainWindow()
         {
             InitializeComponent();
@@ -35,5 +37,25 @@ namespace Ga_2_StephanieLopez
             MessageBox.Show(fullName);
 
         } //btnFullName_Click
+
+        private void btnAdd_Click(object sender, RoutedEventArgs e)
+        {
+            string number1 = txtNumber1.Text;
+            string number2 = txtNumber2.Text;
+            // For readability I decided to add a sign and equal variable
+            string sign = "+";
+            string equalSign = "=";
+            string result = number1 + number2;
+            // I use a string literal to make it easier to format my equation with lots of variables
+            string equation = $"{number1} {sign} {number2} {equalSign} {result}";
+            
+            // Displaying the equation string
+            bblEquation.Content = equation;
+        }
+
+        private void btnSubtract_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
